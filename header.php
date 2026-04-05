@@ -20,4 +20,15 @@
                 <img src="<?php echo esc_url(home_url('wp-content/themes/vinylrecordshop/orangevinyl.avif')); ?>" alt="Image of an orange vinyl record.">
             </a>      
 
-            
+    <!-- Navbar -->
+    <nav>
+        <?php
+            wc_nav_menu(array(
+                'menu' => 'main',
+                'theme_location' => '',
+                'depth' => 2,
+                'fallback_cb' => false
+            ));
+        ?>
+    </nav>
+</header>
