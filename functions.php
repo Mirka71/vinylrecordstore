@@ -81,7 +81,7 @@ function record_store_hours($atts){
 }
 add_shortcode('store_hours', 'record_store_hours');
 
-// FOOTER WIDGET
+// FOOTER WIDGET LOGO
 function recordstore_widgets_init(){
     register_sidebar(array(
         'name' => __('Footer Widget Area One', 'recordstore'),
@@ -90,4 +90,16 @@ function recordstore_widgets_init(){
         'before_widget' => '<div class="logo-widget">',
         'after_widget' => '</div>'
     ));
+    
+// FOOTER WIDGET AREA 2 HOME
+    register_sidebar(array(
+        'name' => __('Footer Widget Area Two', 'recordstore'),
+        'id' => 'footer-widget-area-two',
+        'description' => __('Second footer widget area', 'recordstore'),
+        'before_widget' => '<div class="home-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h6 class="widget-title">',
+        'after_title' => '</h6>',
+    ));
+
 }
