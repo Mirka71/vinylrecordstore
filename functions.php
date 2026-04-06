@@ -27,5 +27,13 @@ $labels = array(
     'all_items' => 'All Records',
     'menu_name' => 'Vinyl Records'
 );
+$args = array(
+    'labels' => $labels,
+    'public' => true,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-album', // found at: https://developer.wordpress.org/resource/dashicons/#media-video
+    'supports', => array('title', 'editor', 'thumbnail', 'excerpt'),
+    'show_in_rest' => true,
+);
 register_post_type('records', $args);
 }
