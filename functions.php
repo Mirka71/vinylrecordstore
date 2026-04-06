@@ -102,4 +102,26 @@ function recordstore_widgets_init(){
         'after_title' => '</h6>',
     ));
 
+    // FOOTER WIDGET AREA 3 ABOUT
+    register_sidebar(array(
+        'name' => __('Footer Widget Area Three', 'recordstore'),
+        'id' => 'footer-widget-area-three',
+        'description' => __('Third footer widget area', 'recordstore'),
+        'before_widget' => '<div class="about-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h6 class="widget-title">',
+        'after_title' => '</h6>',
+    ));
+
+    // FOOTER WIDGET AREA 4 CONTACT
+    register_sidebar(array(
+        'name' => __('Footer Widget Area Four', 'recordstore'),
+        'id' => 'footer-widget-area-four',
+        'description' => __('Fourth footer widget area', 'recordstore'),
+        'before_widget' => '<div class="contact-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h6 class="widget-title">',
+        'after_title' => '</h6>',
+    ));
 }
+add_action('widgits_init', 'recordstore_widgets_init');
