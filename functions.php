@@ -40,7 +40,7 @@ register_post_type('records', $args);
 // run function to run custom post type
 add_action('init', 'post_type_records');
 
-// Create shortcode for a new arrival record
+// NEW ARRIVAL RECORD SHORTCODE
 function new_arrival_record($atts){
     // default attributes
     $pairs = shortcode_atts(array(
@@ -56,3 +56,27 @@ function new_arrival_record($atts){
     return $output;
 }// call function
 add_shortcode('new_arrival', 'new_arrival_record');
+
+// STORE HOUR SHORTCODE
+function record_store_hours($atts){
+    // attributes
+    $pairs = shortcode_atts(array(
+        'title' => 'Store Hours'
+    ), $atts);
+    // html output as list
+    $output = '<div class="store-hours">';
+    $output .= '<h2 class="store-hours-title">' . esc_html($pairs['title']) . '</h2>';
+    $output .= '<ul class="store-hours-list">';
+    $output .= '<li>
+                    <span class="day">Monday - Friday</span>
+                    <span class="hours">9:30am - 8:30pm</span>
+                </li>';
+    $output .= '<li>
+                    <span class="day">Saturday - Sunday</span>
+                    <span class="hours">12:00pm - 4:00pm</span>
+                </li>';
+    $output .= '</ul>';
+    $output .= '</div>';
+    return $output;
+}
+add_shortcode('store_hours', 'record_store_hours');
