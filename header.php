@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html lang="<?php language_attributes(); ?>">
     <head>
         <!-- Character encoding -->
         <meta charset="<?php bloginfo('charset'); ?>">
@@ -25,7 +25,7 @@
         <?php
             wc_nav_menu(array(
                 'menu' => 'main',
-                'theme_location' => '',
+                'theme_location' => 'primary',
                 'depth' => 2,
                 'fallback_cb' => false
             ));
