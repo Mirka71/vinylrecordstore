@@ -37,3 +37,15 @@ $args = array(
 );
 register_post_type('records', $args);
 }
+// run function to run custom post type
+add_action('init', 'post_type_records');
+
+// Create shortcode for a new arrival record
+function new_arrival_record($atts){
+    // default attributes
+    $pairs = shortcode_atts(array(
+        'name' => 'New Record',
+        'artist' => 'Unknown Artist'
+    ), $atts);
+}
+
