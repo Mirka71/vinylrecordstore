@@ -47,5 +47,12 @@ function new_arrival_record($atts){
         'name' => 'New Record',
         'artist' => 'Unknown Artist'
     ), $atts);
-}
-
+    // output into html
+    $output = '<div class="new-arrival-badge">';
+    $output .= '<span class="arrival-label">New Arrival</span>';
+    $output .= '<h2 class="arrival-name">' . esc_html($pairs['name']) . '</h2>';
+    $output .= '<p class="arrival-artist">by ' . esc_html($pairs['artist']) . '</p>';
+    $output .= '</div>';
+    return $output;
+}// call function
+add_shortcode('new_arrival', 'new_arrival_record');
