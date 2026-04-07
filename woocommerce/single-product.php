@@ -86,6 +86,26 @@ get_header('shop'); ?>
                                 <span class="span-value"><?php echo esc_html($year); ?></span>
                             </li>
                             <?php endif; ?>
+                        </ul>
+                    </div>
+                    <?php endif; ?>
+
+                    <!-- PRODUCT META
+                     load footer ad make SKU -->
+                     <div class="record-meta-footer">
+                        <?php do_action('woocommerce_product_meta_start'); ?>
+
+                        <span class="sku_wrapper">
+                            SKU: <?php echo ($sku = $product->get_sku()) ? $sku : 'N/A'; ?>
+                        </span>
+
+                        <?php do_action('woocommerce_product_meta_end'); ?>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
 
 
 
