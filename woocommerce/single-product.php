@@ -105,10 +105,13 @@ get_header('shop'); ?>
             </div>
         </article>
 
+        <!-- Add tabs and related products -->
+        <section class="record-extra-info">
+            <?php woocommerce_output_product_data_tabs(); ?>
+            <?php woocommerce_output_related_products(); ?>
+        </section>
+        <?php endwhile; ?>
 
 
-
-
-
-                </main>
-                get_footer('shop'); ?>
+    </main>
+get_footer('shop'); ?>
