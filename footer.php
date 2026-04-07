@@ -11,19 +11,16 @@
     <!-- AREA TWO HOME -->
       <div class="second widget-area">
             <?php dynamic_sidebar('footer-widget-area-two'); ?>
-        </a>
     </div>
 
       <!-- AREA THREE ABOUT -->
       <div class="third widget-area">
             <?php dynamic_sidebar('footer-widget-area-three'); ?>
-        </a>
     </div>
 
           <!-- AREA FOUR CONTACT -->
       <div class="fourth widget-area">
             <?php dynamic_sidebar('footer-widget-area-four'); ?>
-        </a>
     </div>
 </section>
 
