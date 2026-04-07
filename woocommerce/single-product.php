@@ -59,11 +59,33 @@ get_header('shop'); ?>
 
                 <!-- shows add to cart button -->
                 <div class="record-actions-box">
-                        <!-- Add to cart button -->
                     <?php woocommerce_template_single_add_to_cart(); ?>
                 </div>
 
+                <?php 
+                // custom data pulled from ACF for artist and year
+                $artist = get_field('artist', $product_id);
+                $year   = get_field('release_year', $product_id);
 
+                if ($artist || $year) : ?>
+                <div class="record-specs-container">
+                    <h3 class="specs-title">Record Details</h3>
+                    <ul class="specs-list">
+
+                        <!-- ARTIST -->
+                        <?php if($artist) : ?>
+                            <li>
+                                <span class="spec-label">Artist</span>
+                                <span class="span-value"><?php echo esc_html($artist); ?></span>
+                            </li>
+                            <?php endif; ?>
+                        <!-- YEAR -->
+                             <?php if($year) : ?>
+                            <li>
+                                <span class="spec-label">Release Year</span>
+                                <span class="span-value"><?php echo esc_html($year); ?></span>
+                            </li>
+                            <?php endif; ?>
 
 
 
