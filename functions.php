@@ -126,3 +126,15 @@ function recordstore_widgets_init(){
     ));
 }
 add_action('widgets_init', 'recordstore_widgets_init');
+
+// WOOCOMMERCE support --> enables woocommerce's features in my theme
+function recordstore_woocommerce_support(){
+    add_theme_support('woocommerce');
+}
+add_action( 'after_setup_theme', 'recordstore_woocommerce_support');
+
+// cart function --> update cart automatically
+function enqueue_wc_cart(){
+    wp_enqueue_script('wc_cart_fragments');
+}
+add_action('wp_enqueue_scripts', 'enqueue_wc_cart');
