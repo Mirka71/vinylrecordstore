@@ -7,7 +7,7 @@ function vinyl_record_theme_setup(){
     
     ));
 }
-add_action('after_setup_theme', 'theme_setup');
+add_action('after_setup_theme', 'vinyl_record_theme_setup');
 
 // adding featured img to posts
 add_theme_support('post-thumbnails');
@@ -16,6 +16,7 @@ add_theme_support('post-thumbnails');
 function my_theme_enqueue_assets(){
     get_template_directory_uri() . '/style.css'
 }
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 
 // create post type for records
 function post_type_records(){
@@ -124,4 +125,4 @@ function recordstore_widgets_init(){
         'after_title' => '</h6>',
     ));
 }
-add_action('widgits_init', 'recordstore_widgets_init');
+add_action('widgets_init', 'recordstore_widgets_init');
