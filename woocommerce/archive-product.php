@@ -3,7 +3,7 @@
 if (!defined('ABSPATH')) exit;
 // shop page template
 //get header
-get_header('shop';)
+get_header('shop');
 
 // use shop id to get featured image
 $shop_id = wc_get_page_id('shop');
@@ -36,3 +36,11 @@ $bg_url = $shopFeaturedImg ? $shopFeaturedImg[0] : '';
             </div>
             <?php endif; ?>
         </aside>
+
+        <!-- Main shop content (main woocommerce function)-->
+        <section class="shop-content">
+            <?php woocommerce_content(); ?>
+        </section>
+
+    </main>
+<?php get_footer('shop'); ?>
