@@ -3,7 +3,6 @@
 if (!defined('ABSPATH')) exit;
 
 get_header('shop'); ?>
-get_footer('shop'); ?>
 
 <main id="main" class="record-main custom-record-wrapper">
     
@@ -23,12 +22,14 @@ get_footer('shop'); ?>
         // LOOP --> product details
          while ( have_posts() ) : the_post(); 
         global $product; 
-        $product_id = $product->get_id();
+
+        // get product id
+        $record_id = $product->get_id();
         // ACF gets "genre"
-        $genre = get_field('genre', $product_id);
+        $genre = get_field('genre', $record_id);
         ?>
 
-        <article id="product-<?php the_ID(); ?>" <?php wc_product_class( 'product-layout-grid', $product ); ?>>
+        <article id="product-<?php the_ID(); ?>" <?php wc_product_class( 'record-layout-grid', $product ); ?>>
 
          <div class="record-gallery-container">
             <?php 
@@ -36,3 +37,36 @@ get_footer('shop'); ?>
                 do_action( 'woocommerce_before_single_product_summary' ); 
             ?>
         </div>
+
+        <div class="record-summary">
+            <div class="summary-content">
+                
+                <?php if ( $genre ) : ?>
+                    <span class="record-badge"><?php echo esc_html( $genre ); ?></span>
+                <?php endif; ?>
+
+                <h1 class="record-title"><?php the_title(); ?></h1>
+
+                <!-- show price -->
+                <div class="record-price-row">
+                    <?php echo $record->get_price_html(); ?>
+                </div>
+
+                <!-- to show blurb -->
+                <div class="record-description">
+                    <?php the_excerpt(); ?>
+                </div>
+
+                <!-- shows add to cart button -->
+                <div class="record-actions-box">
+                        <!-- Add to cart button -->
+                    <?php woocommerce_template_single_add_to_cart(); ?>
+                </div>
+
+
+
+
+
+
+                </main>
+                get_footer('shop'); ?>
