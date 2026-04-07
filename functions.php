@@ -1,7 +1,7 @@
 <?php 
 // function to display menu in WP admin
 function vinyl_record_theme_setup(){
-    register_nav(array(
+    register_nav_menus(array(
         'header' => 'Header menu',
         'footer' => 'Footer menu'
     
@@ -33,7 +33,7 @@ $args = array(
     'public' => true,
     'has_archive' => true,
     'menu_icon' => 'dashicons-album', // found at: https://developer.wordpress.org/resource/dashicons/#media-video
-    'supports', => array('title', 'editor', 'thumbnail', 'excerpt'),
+    'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
     'show_in_rest' => true,
 );
 register_post_type('records', $args);
