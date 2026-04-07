@@ -17,3 +17,22 @@ $bg_url = $shopFeaturedImg ? $shopFeaturedImg[0] : '';
         <h1><?php woocommerce_page_title(); ?></h1>
     </div>
 </section>
+
+<div class="shop-layout-container">
+    <!-- making the SIDEBAR -->
+     <aside class="shop">
+        <?php
+        // checks if user added widgets to shop sidebar in WP admin
+        if (is_active_sidebar('shop-sidebar')) : dynamic_sidebar('shop-sidebar');
+
+        // display by genre if no sidebar widgets show
+        else : ?> 
+        <div class="widget">
+            <h3>Browse by Genre</h3>
+            <?php wp_list_categories(array(
+                'taxonomy' => 'product_cat',
+                'title_li' => ''
+            )); ?>
+            </div>
+            <?php endif; ?>
+        </aside>
