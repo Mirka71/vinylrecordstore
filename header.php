@@ -23,7 +23,7 @@
     <!-- Navbar -->
     <nav>
         <?php
-            wc_nav_menu(array(
+            wp_nav_menu(array(
                 'menu' => 'main',
                 'theme_location' => 'primary',
                 'depth' => 2,
