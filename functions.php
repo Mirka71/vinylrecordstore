@@ -144,6 +144,6 @@ add_action( 'after_setup_theme', 'recordstore_woocommerce_support');
 
 // cart function --> update cart automatically
 function enqueue_wp_cart(){
-    wp_enqueue_script('wc_cart_fragments');
+    wp_enqueue_script('wp_cart_fragments');
 }
-add_action('wp_enqueue_scripts', 'enqueue_wc_cart');
+add_action('wp_enqueue_scripts', 'enqueue_wp_cart');
