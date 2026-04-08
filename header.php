@@ -30,7 +30,7 @@
                 'theme_location' => 'header',
                 'depth' => 2,
                 'fallback_cb' => false,
-
+                'menu_class' => 'nav justify-content-center'
             ));
         ?>
     </nav>
