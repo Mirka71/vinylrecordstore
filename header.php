@@ -15,19 +15,22 @@
     <body <?php body_class(); ?>>
         <!-- Header -->
         <header class="main-header navbar">
-            <a href="<?php echo esc_url(home_url()); ?>">
-                <!-- Image -->
-                <img src="<?php echo esc_url(home_url('wp-content/themes/vinylrecordshop/orangevinyl.avif')); ?>" alt="Image of an orange vinyl record.">
-            </a>      
+            <div class="container text-center">
+                <a href="<?php echo esc_url(home_url()); ?>">
+                    <!-- Image -->
+                    <img src="<?php echo esc_url(home_url('wp-content/themes/vinylrecordshop/orangevinyl.avif')); ?>" alt="Image of an orange vinyl record.">
+                </a>      
+            </div>
 
     <!-- Navbar -->
-    <nav>
+    <nav class="navbar navbar-expand-lg justify-content-center">
         <?php
             wp_nav_menu(array(
                 'menu' => 'main',
                 'theme_location' => 'header',
                 'depth' => 2,
-                'fallback_cb' => false
+                'fallback_cb' => false,
+
             ));
         ?>
     </nav>
