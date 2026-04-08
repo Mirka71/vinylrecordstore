@@ -64,8 +64,8 @@ get_header('shop'); ?>
 
                 <?php 
                 // custom data pulled from ACF for artist and year
-                $artist = get_field('artist', $product_id);
-                $year   = get_field('release_year', $product_id);
+                $artist = get_field('artist', $record_id);
+                $year   = get_field('release_year', $record_id);
 
                 if ($artist || $year) : ?>
                 <div class="record-specs-container">
