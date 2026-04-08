@@ -49,7 +49,7 @@ get_header('shop'); ?>
 
                 <!-- show price -->
                 <div class="record-price-row">
-                    <?php echo $record->get_price_html(); ?>
+                    <?php echo $product->get_price_html(); ?>
                 </div>
 
                 <!-- to show blurb -->
