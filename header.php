@@ -25,7 +25,7 @@
         <?php
             wp_nav_menu(array(
                 'menu' => 'main',
-                'theme_location' => 'primary',
+                'theme_location' => 'header',
                 'depth' => 2,
                 'fallback_cb' => false
             ));
